@@ -1,0 +1,141 @@
+\documentclass[12pt,a4paper,twoside,openright]{report}
+%To save paper delete openright.
+%To remove todonotes insert the "final" keyword
+
+\usepackage[includehead, top=32mm, inner=114pt, outer=80pt, columnsep=20pt]{geometry}
+%margin spacing
+
+%\linespread{1.5}
+%Experiment with this for ease of reading
+
+\usepackage[UKenglish]{babel}%UK english rules
+
+\usepackage{physics}
+\usepackage{upgreek}
+%includes the amsmaths in physics package and other useful functions
+
+\usepackage[hidelinks]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref} %hyperlinks name not just number and gives full name
+\newcommand{\creflastconjunction}{, and\nobreakspace} % gives cref serial (oxford) comma
+\creflabelformat{equation}{#2#1#3} %removes brackets around equation numbers
+%makes cross referencing really nice
+
+\usepackage[titletoc,toc]{appendix}
+%makes appenidices separate from another chapter
+
+\usepackage[nottoc,notlot,notlof]{tocbibind}
+%gives more control of what is included in Table of Contents
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{caption}
+\usepackage{subcaption}
+%gives ability to use images in document with captions and cross references to subcaptions
+
+\usepackage[Export]{adjustbox}  %maps package macros to normal graphicx macros
+%allows cropping of images within Tex
+
+
+\usepackage{fancyhdr}
+%enables clever headers and customisation
+
+\usepackage[colorinlistoftodos,obeyFinal]{todonotes}
+%gives macros for visible notes
+
+
+\usepackage[acronym,toc=false,nopostdot=true,translate=babel]{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short} %fixes acronyms to how glossaries package deals with them
+%gives a glossary/acronym handler
+
+\input{commands.tex}
+%commands in separate file
+
+\makenoidxglossaries%\makeglossary
+\input{glossary.tex}
+%list of glossary/acronym items in separate file
+
+
+\begin{document}
+	
+\listoftodos
+%inserts list of notes (from \todo macros) to beginning of document for increased visibility
+
+	\title{Title}
+	
+
+	\author{Name\footnote{\href{mailto:email@email.com}{emailtext@email}}}
+	
+	
+	
+
+	\date{\today}
+
+
+	
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\leftmark}%if using openright, remember to swap this round
+\fancyhead[LE,RO]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ #1}{}}
+%customises how headers work
+
+
+\pagenumbering{roman}
+%different numbering for frontmatter
+
+\maketitle
+%inserts title (cover page}
+
+\thispagestyle{empty}
+%removes headers etc from title page
+
+\chapter*{\centering Abstract}
+%abstract environment doesn't exist in report class
+%this centers, removes numbering and section from Table of Contents imitating an abstract environment
+
+\todo[inline]{Write your abstract here, don't forget to edit details on cover page}
+
+
+\thispagestyle{empty}
+\chapterEnd
+
+	
+\glsunsetall
+%ensures all acronyms are printed in their full form for frontmatter
+	
+\tableofcontents
+\chapterEnd
+%prints Table of Contents
+	
+\listoffigures
+\chapterEnd
+%print List of Figures
+
+\printnoidxglossaries %\printglossary[type=\acronymtype]
+\chapterEnd
+%prints glossaries
+%other comment is left in as it should work but hasn't for me
+
+\glsresetall
+%resets acronym flags if they have been used in case they have appeared in frontmatter
+
+
+\chapter{Introduction\label{sc:Intro}}\pagenumbering{arabic} %begins 'normal' numbering for main document
+\input{chapters/Introduction}
+\chapterEnd
+
+\chapter{Background\label{sc:Background}}
+\input{chapters/Background}
+\chapterEnd
+%examples of how to include a chapter
+
+\bibliographystyle{unsrt}
+\bibliography{bibfile}
+%prints bibliography
+
+\chapterEnd
+
+\input{chapters/appendix}
+%inputs appendices
+	
+\end{document}

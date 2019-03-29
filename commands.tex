@@ -1,0 +1,19 @@
+
+%\newcommand{\newCommandName}{text to insert} %how to make a command
+
+\newcommand{\comment}[1]{}
+%enables multiline comments
+%this is used by \comment{commented text}
+
+\usepackage{bm}
+\let\vec\bm %makes vectors bold (and italiced) rather than having an arrow
+\let\norm\abs %makes normilisation look a bit better imo
+
+
+\newcommand{\Hamiltonian}{\hat{H}}%{\hat{\cal{H}}}
+%in case you want to change all you Hamiltonian symbols at once
+
+\newcommand{\chapterEnd}{\clearpage \thispagestyle{empty}}
+%ends each chapter nicely
+%makes sure all images have been displayed
+%if there is an empty page it removes the header/footer
