@@ -1,2 +1,13 @@
 %!Tex root = ../ThesisTemplate.tex
 %magic comment allows build to start to be run in chapter files
+
+\begin{figure}[tbp]
+	\centering
+	%\includegraphics[width=0.5\linewidth]{RamanLambda}
+	\def\svgwidth{0.5\linewidth}
+	\input{images/RamanLambda.pdf_tex}
+	\caption[short caption]{\label{fig:label}
+		This image was generated in inkscape and text rendered in LaTex.
+		This is done by saving as a pdf and having a separate file of Tex (for the text) generated.
+	}
+\end{figure}
