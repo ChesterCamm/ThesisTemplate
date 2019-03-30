@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper,twoside,openright]{report}
+\documentclass[12pt,a4paper,twoside]{report}
 %To save paper delete openright.
 %To remove todonotes insert the "final" keyword
 
@@ -97,7 +97,7 @@
 
 
 \thispagestyle{empty}
-\chapterEnd
+\chapterEnd % custom command (defined in commands.tex) to end chapters with
 
 	
 \glsunsetall
@@ -119,8 +119,9 @@
 \glsresetall
 %resets acronym flags if they have been used in case they have appeared in frontmatter
 
+\pagenumbering{arabic}%begins 'normal' numbering for main document
 
-\chapter{Introduction\label{sc:Intro}}\pagenumbering{arabic} %begins 'normal' numbering for main document
+\chapter{Introduction\label{sc:Intro}}  
 \input{chapters/Introduction}
 \chapterEnd
 
