@@ -65,15 +65,16 @@
 \listoftodos
 %inserts list of notes (from \todo macros) to beginning of document for increased visibility
 
-	\title{Title}
-	
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\leftmark}%if using openright, remember to swap this round
+\fancyhead[LE,RO]{\thepage}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ #1}{}}
+%customises how headers work
 
-	\author{Name\footnote{\href{mailto:email@email.com}{emailtext@email.com}}}
-	
-	
-	
 
-	\date{\today}
+\pagenumbering{roman}
+%different numbering for frontmatter
 
 \begin{titlepage}
 	\centering
@@ -97,20 +98,6 @@
 	{\large \monthyeardate\today \par}
 \end{titlepage}
 
-	
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[RE,LO]{\leftmark}%if using openright, remember to swap this round
-\fancyhead[LE,RO]{\thepage}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ #1}{}}
-%customises how headers work
-
-
-\pagenumbering{roman}
-%different numbering for frontmatter
-
-%\maketitle
-%inserts title (cover page}
 
 \thispagestyle{empty}
 %removes headers etc from title page
