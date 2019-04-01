@@ -10,6 +10,11 @@
 
 \usepackage[UKenglish]{babel}%UK english rules
 
+\usepackage[long,nodayofweek]{datetime}
+\newdateformat{monthyeardate}{%
+	\monthname[\THEMONTH] \THEYEAR}
+%allows you to set custom date formats for the \today command
+
 \usepackage{physics}
 \usepackage{upgreek}
 %includes the amsmaths in physics package and other useful functions
@@ -70,6 +75,27 @@
 
 	\date{\today}
 
+\begin{titlepage}
+	\centering
+	{\large \bfseries \uppercase{University} \par}
+	\vspace{0.5cm}
+	{\scshape\large Faculty \par}
+	\vspace{0.25cm}
+	{\scshape\large School \par}
+	\vspace{5cm}
+	{\bfseries\large Thesis Title\par}
+	\vspace{1cm}
+	{\large by \par}
+	\vspace{1cm}
+	{\bfseries\large  Author\par}
+	
+	\vfill
+	
+	%Bottom of the page
+	{\large Thesis for the degree of Doctor of Philosophy \par}
+	\vspace{1cm}		
+	{\large \monthyeardate\today \par}
+\end{titlepage}
 
 	
 \pagestyle{fancy}
@@ -83,7 +109,7 @@
 \pagenumbering{roman}
 %different numbering for frontmatter
 
-\maketitle
+%\maketitle
 %inserts title (cover page}
 
 \thispagestyle{empty}
