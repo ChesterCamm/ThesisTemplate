@@ -1,13 +1,19 @@
 %!Tex root = ../ThesisTemplate.tex
-%magic comment allows build to start to be run in chapter files
+%magic comment allows build to start to be run in chapter files.
+%This may differ from editor to editor. I use TeXstudio, and I require the parent file to be opened.
 
+In \cref{fig:label} editing the font in LaTeX as seen with \verb|\fontsize{9pt}{11pt}\selectfont| command can help with formatting problems.
+A useful tutorial can be found at \href{https://youtu.be/MK3cWRA5eLQ}{\url{https://youtu.be/MK3cWRA5eLQ}} except export to .pdf and .pdf\_tex.
 \begin{figure}[tbp]
 	\centering
-	%\includegraphics[width=0.5\linewidth]{RamanLambda}
+	{
+	\fontsize{12pt}{14pt}\selectfont
 	\def\svgwidth{0.5\linewidth}
 	\input{images/RamanLambda.pdf_tex}
+	}
 	\caption[short caption]{\label{fig:label}
 		This image was generated in inkscape and text rendered in LaTex.
 		This is done by saving as a pdf and having a separate file of Tex (for the text) generated.
+		This can often ruin the font/text formatting relative to the image.
 	}
 \end{figure}
