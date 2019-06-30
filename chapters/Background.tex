@@ -17,3 +17,16 @@ A useful tutorial can be found at \href{https://youtu.be/MK3cWRA5eLQ}{\url{https
 		This can often ruin the font/text formatting relative to the image.
 	}
 \end{figure}
+
+An example of the refering to subequations in a batch with clever ref can be seen in \cref{eq:DensityChangeRot}.
+\begin{subequations}\label[multiequation]{eq:DensityChangeRot}
+	\begin{align}
+		\dot{\tilde{\rho_{00}}}&= -\frac{i\Omega}{2} \left( \tilde{\rho_{10}}- \tilde{\rho_{01}} \right) + \gamma \tilde{\rho_{11}}
+		\\
+		\dot{\tilde{\rho_{11}}}&= +\frac{i\Omega}{2} \left( \tilde{\rho_{10}}- \tilde{\rho_{01}} \right) - \gamma \tilde{\rho_{11}}
+		\\
+		\dot{\tilde{\rho_{01}}}&= -i \tilde{\rho_{01}} \delta - \frac{i\Omega}{2} \left( \tilde{\rho_{11}}- \tilde{\rho_{00}} \right) - \frac{\gamma}{2} \tilde{\rho_{01}}
+		\\
+		\dot{\tilde{\rho_{10}}}&=+ i \tilde{\rho_{10}} \delta + \frac{i\Omega}{2} \left( \tilde{\rho_{11}}- \tilde{\rho_{00}} \right) - \frac{\gamma}{2} \tilde{\rho_{10}},
+	\end{align}
+\end{subequations}
